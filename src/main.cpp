@@ -14,6 +14,7 @@ int main()
 	Tree* t = new Tree();
 	std::cout << "Adding elements to the tree" << std::endl;
 	for(int i = 0; i < 20; ++i ) {
+	    std::cout <<"inserting valye "<<a[i] << std::endl;
 	    t->insert(a[i]);
 	    t->print();
 	    std::cout <<"<=======================================>" << std::endl;

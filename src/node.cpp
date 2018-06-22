@@ -1,8 +1,13 @@
 #include <iostream>
 #include <node.hpp>
 
-Node::Node(int v = 0):value(v), left(NULL), right(NULL), parent(NULL)
-{};
+Node::Node(int v):
+	value(v)
+	,left(NULL)
+	,right(NULL)
+	,parent(NULL)
+{
+}
 
 void Node::set_left(Node* l)
 {

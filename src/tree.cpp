@@ -15,7 +15,6 @@ void Tree::insert(int v)
 		return;
 	}
 	insert_node(root,v);
-	return;
 }
 
 void Tree::insert_node(Node* n, int v) 
@@ -29,7 +28,6 @@ void Tree::insert_node(Node* n, int v)
 			return;
 		}
 		insert_node(n->get_right(),v);
-		return;
 	} else {
 		if(!n->get_left()) {
 			Node* x = new Node(v);
@@ -39,7 +37,6 @@ void Tree::insert_node(Node* n, int v)
 			return;
 		}
 		insert_node(n->get_left(),v);
-		return;
 	}
 }
 
@@ -413,8 +410,6 @@ void Tree::balance_tree(Node* n, int h, Dir d_child) // int v)
 		}
 
 		balance_tree(n->get_parent(), h+1, d);  
-		return;
 	}
-	return;
 }
 
