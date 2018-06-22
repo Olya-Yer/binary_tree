@@ -1,31 +1,23 @@
 #include <tree.hpp>
 #include <iostream>
-
+#include <algorithm>    // std::shuffle
+#include <array>        // std::array
+#include <random>       // std::default_random_engine
+#include <chrono> 
 
 int main()
 {
+	std::array<int,20> a {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20};
+
+	unsigned seed = std::chrono::system_clock::now().time_since_epoch().count();
+        shuffle (a.begin(), a.end(), std::default_random_engine(seed));
 	Tree* t = new Tree();
 	std::cout << "Adding elements to the tree" << std::endl;
-	t->insert(20); 
-	t->insert(22); 
-	t->insert(14); 
-	t->insert(9); 
-	t->insert(16);
-	t->insert(15);
-	t->insert(76); 
-	t->insert(54); 
-	t->print2D(t->get_root(),1);
-	std::cout << "right right rotate from root" << std::endl;
-	t->right_right_rotate(t->get_root());
-	t->print2D(t->get_root(),1);
-	return 0;
-	std::cout << "deleting node 20" << std::endl;
-	t->delete_node(20);
-	t->print();
-	return 0;
-	std::cout << t->contains(54) << std::endl;
-	std::cout << t->contains(9) << std::endl;
-	std::cout << t->contains(742) << std::endl;
+	for(int i = 0; i < 20; ++i ) {
+	    t->insert(a[i]);
+	    t->print();
+	    std::cout <<"<=======================================>" << std::endl;
+	}
 	return 0;
 }
 

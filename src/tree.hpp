@@ -88,17 +88,20 @@ class Tree
 		Node* right_most(Node*);
 		int get_height(Node* r);
 		Node* get_root() { return root;};
-		void left_left_rotate(Node* r);
-		void right_right_rotate(Node* root);
+		void left_rotate(Node* r);
+		void right_rotate(Node* root);
 		void left_right_rotate(Node* root);
 		void right_left_rotate(Node* root);
 		void print2D(Node *r, int space);
+		enum Dir{RIGHT,	LEFT};
 		/**
-		 * @brief checks if the given tree is balanced
+		 * @brief checks if the given tree is balanced and balances it
+		 * if needed
 		 * @param Node* root of the tree
 		 * @return true if the tree is balanced, false otherwise
 		 */
-		bool is_balanced(Node*);
+		void balance_tree(Node*, int, Dir);
+		Tree::Dir get_dir(Node*);
 		/**
 		 * @brief corrects the balance of the tree by swaping nodes
 		 * @param Node* the root of the tree that needs to be balanced
